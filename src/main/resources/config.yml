@@ -1,0 +1,46 @@
+#RedChat main configuration file.
+# Messages support MiniMessage format only
+# Some messages can have placeholders, and supports PlaceholderApi placeholders, if PAPI is installed.
+# <papi:placeholder> PlaceholderAPI placeholders. Use without '%'
+# Other messages pre-built and don't support any kind of placeholders.
+messages:
+  # Specify format to chat messages
+  chat:
+    # <player_name> - chat message sender
+    # <message> - chat message
+    format: "<click:suggest_command:'/m <player_name> '><<player_name>></click> <message>"
+    join: "<yellow><lang:multiplayer.player.joined:'<player_name>'>"
+    quit: "<yellow><lang:multiplayer.player.left:'<player_name>'>"
+    advancement:
+      task: "<lang:chat.type.advancement.task:'<click:suggest_command:'/m <player_name> '><player_name></click>':'<advancement>'>"
+      goal: "<lang:chat.type.advancement.goal:'<click:suggest_command:'/m <player_name> '><player_name></click>':'<advancement>'>"
+      challenge: "<lang:chat.type.advancement.challenge:'<click:suggest_command:'/m <player_name> '><player_name></click>':'<advancement>'>"
+  #Specify format for private messages (/tell, /msg, etc.)
+  whisper:
+    # <sender> - message sender. (command executor)
+    # <receiver> - message receiver.
+    # <message> - a message that is being sent
+    format:
+      send: "<gray><i><click:suggest_command:'/r '><lang:commands.message.display.outgoing:'<sender>':'<message>'></click>"
+      receive: "<gray><i><click:suggest_command:'/r '><lang:commands.message.display.incoming:'<sender>':'<message>'></click>"
+    reply-not-found: "<red>There's no one to answer to"
+  #Specify messages for /ignore command
+  ignore:
+    # <player_name> - blocked player
+    start: "You are ignoring <player_name>"
+    stop: "You stopped ignoring <player_name>"
+    #Message, displayed if blocked player send message in chat. If no value is set, the messages will not be displayed.
+    # <player_name> - blocked message sender
+    # <message> - message from ignored player.
+    ignored-chat: "<hover:show_text:'Player: <player_name>\nMessage: <message>'><i><gray>Blocked message</hover>"
+    #Displayed if player tried to /ignore yourself
+    cant-ignore-yourself: "<red>You can't ignore yourself!"
+  #Displayed if this config reloads
+  config-reload: "Configuration successfully reloaded"
+  #Displayed if player sends command
+  too-few-arguments: "<red>Too few arguments!"
+  player-not-found: "<red>Player not found"
+  can-executed-player-only: "<red>This command can be executed only by players!"
+
+#Simple don't touch this.
+config-version: 1.0

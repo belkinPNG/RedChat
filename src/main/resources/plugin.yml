@@ -1,0 +1,43 @@
+name: RedChat
+version: '${version}'
+main: io.belkinpng.redchat.RedChat
+api-version: '1.21'
+author: belkinPNG
+
+softdepend:
+  - PlaceholderAPI
+
+permissions:
+  redchat:
+    description: Grants access to all permissions
+    default: op
+    children:
+      redchat.reload:
+        description: Allows config reloading
+        default: op
+      redchat.ignore:
+        description: Allows ignoring other players in chat
+        default: true
+      redchat.whisper:
+        description: Allows sending private messages
+        default: true
+      redchat.whisper.reply:
+        description: Allows reply using /r
+        default: true
+
+commands:
+  redchat:
+    permission: redchat.reload
+  msg:
+    permission: redchat.whisper
+    aliases:
+      - m
+      - whisper
+      - pm
+      - tell
+  reply:
+    permission: redchat.whisper.reply
+    aliases:
+      - r
+  ignore:
+    permission: redchat.ignore
