@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RedChat.iml" filepath="$PROJECT_DIR$/.idea/modules/RedChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RedChat.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RedChat.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.belkinpng.RedChat.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io.belkinpng.RedChat.main.iml" />
     </modules>
   </component>
 </project>

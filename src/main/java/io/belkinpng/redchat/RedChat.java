@@ -38,7 +38,7 @@ public final class RedChat extends JavaPlugin {
 
     private static boolean isPapiEnabled() {
         var plugin = getPluginManager().getPlugin("PlaceholderAPI");
-        boolean isEnabled = plugin != null;
+        boolean isEnabled = plugin != null && plugin.isEnabled();
         if (!isEnabled) {
             LOGGER.info("PlaceholderAPI not found, placeholders from this plugin won't work");
         }
