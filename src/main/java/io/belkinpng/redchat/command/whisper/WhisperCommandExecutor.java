@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
 import static io.belkinpng.redchat.RedChat.getPlugin;
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.*;
+import static io.belkinpng.redchat.util.component.Placeholders.*;
 
 public class WhisperCommandExecutor implements CommandExecutor {
 

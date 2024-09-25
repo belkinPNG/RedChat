@@ -13,7 +13,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.jetbrains.annotations.NotNull;
 
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.*;
+import static io.belkinpng.redchat.util.component.Placeholders.*;
 
 public class AsyncChatListener implements Listener {
     private static final ChatRenderer renderer = new ChatRenderer() {

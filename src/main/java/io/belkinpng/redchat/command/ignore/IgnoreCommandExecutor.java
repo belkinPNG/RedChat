@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.PLAYER_NAME;
+import static io.belkinpng.redchat.util.component.Placeholders.PLAYER_NAME;
 
 public class IgnoreCommandExecutor implements CommandExecutor {
     @Override

@@ -3,7 +3,7 @@ package io.belkinpng.redchat.util.component;
 import org.intellij.lang.annotations.Subst;
 import org.jetbrains.annotations.NotNull;
 
-public enum MessagePlaceholder {
+public enum Placeholders {
 
     PLAYER_NAME("player_name"),
     SENDER("sender"),
@@ -14,7 +14,7 @@ public enum MessagePlaceholder {
 
     private final String key;
 
-    MessagePlaceholder(String key) {
+    Placeholders(String key) {
         this.key = key;
     }
 

@@ -7,8 +7,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.ADVANCEMENT;
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.PLAYER_NAME;
+import static io.belkinpng.redchat.util.component.Placeholders.ADVANCEMENT;
+import static io.belkinpng.redchat.util.component.Placeholders.PLAYER_NAME;
 
 public class PlayerAdvancementListener implements Listener {
 

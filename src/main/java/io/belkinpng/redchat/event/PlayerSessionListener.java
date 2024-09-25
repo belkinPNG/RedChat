@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.PLAYER_NAME;
+import static io.belkinpng.redchat.util.component.Placeholders.PLAYER_NAME;
 
 public class PlayerSessionListener implements Listener {
 

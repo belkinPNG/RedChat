@@ -8,7 +8,7 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import static io.belkinpng.redchat.util.component.MessagePlaceholder.PAPI;
+import static io.belkinpng.redchat.util.component.Placeholders.PAPI;
 
 public class PapiParser {
     private static final LegacyComponentSerializer legacyComponentSerializer = LegacyComponentSerializer.builder().extractUrls().hexColors().build();
