@@ -1,6 +1,6 @@
 package io.belkinpng.redchat.util;
 
-import io.belkinpng.redchat.util.component.MessageBuilder;
+import io.belkinpng.redchat.util.component.MiniMessageBuilder;
 import net.kyori.adventure.text.Component;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.NotNull;
@@ -64,7 +64,7 @@ public class Config {
             LOGGER.warn("Config string {} is null, empty component will be returned.", path);
             return Component.empty();
         }
-        return new MessageBuilder(string).build();
+        return new MiniMessageBuilder(string).build();
     }
 
     private static void loadConfigFile() {

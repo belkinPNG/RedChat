@@ -1,7 +1,7 @@
 package io.belkinpng.redchat.event;
 
 import io.belkinpng.redchat.util.Config;
-import io.belkinpng.redchat.util.component.MessageBuilder;
+import io.belkinpng.redchat.util.component.MiniMessageBuilder;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -19,7 +19,7 @@ public class PlayerSessionListener implements Listener {
             event.joinMessage(null);
             return;
         }
-        event.joinMessage(new MessageBuilder(Config.PLAYER_JOIN)
+        event.joinMessage(new MiniMessageBuilder(Config.PLAYER_JOIN)
                 .setPapiPlaceholders(player)
                 .setPlaceholder(PLAYER_NAME.key(), player.getName())
                 .build()
@@ -33,7 +33,7 @@ public class PlayerSessionListener implements Listener {
             event.quitMessage(null);
             return;
         }
-        event.quitMessage(new MessageBuilder(Config.PLAYER_QUIT)
+        event.quitMessage(new MiniMessageBuilder(Config.PLAYER_QUIT)
                 .setPapiPlaceholders(player)
                 .setPlaceholder(PLAYER_NAME.key(), player.getName())
                 .build()

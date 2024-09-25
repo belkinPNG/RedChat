@@ -1,7 +1,7 @@
 package io.belkinpng.redchat.command.whisper;
 
 import io.belkinpng.redchat.util.Config;
-import io.belkinpng.redchat.util.component.MessageBuilder;
+import io.belkinpng.redchat.util.component.MiniMessageBuilder;
 import io.belkinpng.redchat.util.storage.IgnoredPlayers;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -44,7 +44,7 @@ public class WhisperCommandExecutor implements CommandExecutor {
     }
 
     public static void whisper(@NotNull Player sender, @NotNull Player receiver, @NotNull String message) {
-        var builder = new MessageBuilder()
+        var builder = new MiniMessageBuilder()
                 .setPapiRelationalPlaceholders(sender, receiver)
                 .setPlaceholder(SENDER.key(), sender.getName())
                 .setPlaceholder(RECEIVER.key(), receiver.getName())

@@ -1,7 +1,7 @@
 package io.belkinpng.redchat.event;
 
 import io.belkinpng.redchat.util.Config;
-import io.belkinpng.redchat.util.component.MessageBuilder;
+import io.belkinpng.redchat.util.component.MiniMessageBuilder;
 import io.belkinpng.redchat.util.storage.IgnoredPlayers;
 import io.papermc.paper.chat.ChatRenderer;
 import io.papermc.paper.event.player.AsyncChatEvent;
@@ -23,7 +23,7 @@ public class AsyncChatListener implements Listener {
             boolean isIgnoring = (viewer instanceof Player player) && IgnoredPlayers.isIgnoring(player, source); //cringe twice check ((((
             String format = isIgnoring ? Config.IGNORED_CHATTING : Config.CHAT_FORMAT;
 
-            return new MessageBuilder(format)
+            return new MiniMessageBuilder(format)
                     .serializeLegacy()
                     .setPapiPlaceholders(source)
                     .setPlaceholder(PLAYER_NAME.key(), source.getName())

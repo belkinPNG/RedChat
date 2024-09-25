@@ -1,6 +1,6 @@
 package io.belkinpng.redchat.command.ignore;
 
-import io.belkinpng.redchat.util.component.MessageBuilder;
+import io.belkinpng.redchat.util.component.MiniMessageBuilder;
 import io.belkinpng.redchat.util.Config;
 import io.belkinpng.redchat.util.storage.IgnoredPlayers;
 import org.bukkit.Bukkit;
@@ -38,7 +38,7 @@ public class IgnoreCommandExecutor implements CommandExecutor {
             return;
         }
 
-        var builder = new MessageBuilder()
+        var builder = new MiniMessageBuilder()
                 .setPapiPlaceholders(ignoredPlayer)
                 .setPlaceholder(PLAYER_NAME.key(), ignoredPlayer.getName());
 

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MessageBuilder {
+public class MiniMessageBuilder {
     private String format;
     private final List<TagResolver> tagResolvers = new ArrayList<>();
     private boolean shouldSerializeLegacy;
@@ -22,47 +22,47 @@ public class MessageBuilder {
             shouldSerializeLegacy ? LegacyStringFormatter.toMiniMessage(string) : string
     ).build();
 
-    public MessageBuilder(String format) {
+    public MiniMessageBuilder(String format) {
         this.format = format;
     }
 
-    public MessageBuilder() {}
+    public MiniMessageBuilder() {}
 
-    public MessageBuilder setPapiPlaceholders(@NotNull Player player) {
+    public MiniMessageBuilder setPapiPlaceholders(@NotNull Player player) {
         if (RedChat.papiAvailable) {
             tagResolvers.add(PapiParser.papiTag(player));
         }
         return this;
     }
 
-    public MessageBuilder setFormat(String format) {
+    public MiniMessageBuilder setFormat(String format) {
         this.format = format;
         return this;
     }
 
-    public MessageBuilder setPapiRelationalPlaceholders(@NotNull Player firstPlayer, @NotNull Player secondPlayer) {
+    public MiniMessageBuilder setPapiRelationalPlaceholders(@NotNull Player firstPlayer, @NotNull Player secondPlayer) {
         if (RedChat.papiAvailable) {
             tagResolvers.add(PapiParser.papiRelationalTag(firstPlayer, secondPlayer));
         }
         return this;
     }
 
-    public MessageBuilder setPlaceholder(@Subst("") @NotNull String key, @NotNull Component value) {
+    public MiniMessageBuilder setPlaceholder(@Subst("") @NotNull String key, @NotNull Component value) {
         tagResolvers.add(Placeholder.component(key, value));
         return this;
     }
 
-    public MessageBuilder setPlaceholder(@Subst("") @NotNull String key, @NotNull String value) {
+    public MiniMessageBuilder setPlaceholder(@Subst("") @NotNull String key, @NotNull String value) {
         tagResolvers.add(Placeholder.parsed(key, value));
         return this;
     }
 
-    public MessageBuilder setUnparsedPlaceholder(@Subst("") @NotNull String key, @NotNull String value) {
+    public MiniMessageBuilder setUnparsedPlaceholder(@Subst("") @NotNull String key, @NotNull String value) {
         tagResolvers.add(Placeholder.unparsed(key, value));
         return this;
     }
 
-    public MessageBuilder serializeLegacy() {
+    public MiniMessageBuilder serializeLegacy() {
         this.shouldSerializeLegacy = true;
         return this;
     }

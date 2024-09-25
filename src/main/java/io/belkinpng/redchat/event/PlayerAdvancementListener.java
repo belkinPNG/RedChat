@@ -1,7 +1,7 @@
 package io.belkinpng.redchat.event;
 
 import io.belkinpng.redchat.util.Config;
-import io.belkinpng.redchat.util.component.MessageBuilder;
+import io.belkinpng.redchat.util.component.MiniMessageBuilder;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -17,7 +17,7 @@ public class PlayerAdvancementListener implements Listener {
         var display = event.getAdvancement().getDisplay();
         var player = event.getPlayer();
         if (display != null && display.doesAnnounceToChat()) {
-            var builder = new MessageBuilder()
+            var builder = new MiniMessageBuilder()
                     .serializeLegacy()
                     .setPapiPlaceholders(player)
                     .setPlaceholder(PLAYER_NAME.key(), player.getName())
