@@ -36,7 +36,7 @@ messages:
     # <player_name> - blocked player
     start: "You are ignoring <player_name>"
     stop: "You stopped ignoring <player_name>"
-    # Message, displayed if blocked player send message in chat. If no value is set, the messages will not be displayed.
+    # Message, displayed if blocked player send message in chat.
     # <player_name> - blocked message sender
     # <message> - message from ignored player.
     ignored-chat: "<hover:show_text:'Player: <player_name>\nMessage: <message>'><i><gray>Blocked message</hover>"

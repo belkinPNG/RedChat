@@ -20,7 +20,7 @@ public class AsyncChatListener implements Listener {
         @NotNull
         @Override
         public Component render(@NotNull Player source, @NotNull Component sourceDisplayName, @NotNull Component message, @NotNull Audience viewer) {
-            boolean isIgnoring = (viewer instanceof Player player) && IgnoredPlayers.isIgnoring(player, source); //cringe twice check ((((
+            boolean isIgnoring = (viewer instanceof Player player) && IgnoredPlayers.isIgnoring(player, source);
             String format = isIgnoring ? Config.IGNORED_CHATTING : Config.CHAT_FORMAT;
 
             return new MiniMessageBuilder(format)
@@ -34,14 +34,6 @@ public class AsyncChatListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOW)
     public void onAsyncChat(AsyncChatEvent event) {
-        event.viewers().removeIf(viewer -> {
-            if (viewer instanceof Player receiver) {
-                boolean isIgnoring = IgnoredPlayers.isIgnoring(receiver, event.getPlayer());
-                return isIgnoring && Config.IGNORED_CHATTING.isBlank();
-            }
-            return false;
-        });
-
         event.renderer(renderer);
     }
 }
