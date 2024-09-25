@@ -24,6 +24,7 @@ public class AsyncChatListener implements Listener {
             String format = isIgnoring ? Config.IGNORED_CHATTING : Config.CHAT_FORMAT;
 
             return new MessageBuilder(format)
+                    .serializeLegacy()
                     .setPapiPlaceholders(source)
                     .setPlaceholder(PLAYER_NAME.key(), source.getName())
                     .setPlaceholder(MESSAGE.key(), message)

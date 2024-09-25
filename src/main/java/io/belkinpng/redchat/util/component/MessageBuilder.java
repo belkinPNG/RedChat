@@ -12,9 +12,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MessageBuilder {
     private String format;
     private final List<TagResolver> tagResolvers = new ArrayList<>();
+    private boolean shouldSerializeLegacy;
+
+    private final MiniMessage miniMessage = MiniMessage.builder().preProcessor(string ->
+            shouldSerializeLegacy ? LegacyStringFormatter.toMiniMessage(string) : string
+    ).build();
 
     public MessageBuilder(String format) {
         this.format = format;
@@ -56,11 +62,17 @@ public class MessageBuilder {
         return this;
     }
 
+    public MessageBuilder serializeLegacy() {
+        this.shouldSerializeLegacy = true;
+        return this;
+    }
+
     public boolean hasEmptyFormat() {
         return format.isEmpty();
     }
 
+    @NotNull
     public Component build() {
-        return MiniMessage.miniMessage().deserialize(format, TagResolver.resolver(tagResolvers));
+        return miniMessage.deserialize(format, TagResolver.resolver(tagResolvers));
     }
 }

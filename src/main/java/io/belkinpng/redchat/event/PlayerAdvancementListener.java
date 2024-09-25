@@ -16,8 +16,9 @@ public class PlayerAdvancementListener implements Listener {
     public void onAdvancementDone(PlayerAdvancementDoneEvent event) {
         var display = event.getAdvancement().getDisplay();
         var player = event.getPlayer();
-        if (display != null) {
+        if (display != null && display.doesAnnounceToChat()) {
             var builder = new MessageBuilder()
+                    .serializeLegacy()
                     .setPapiPlaceholders(player)
                     .setPlaceholder(PLAYER_NAME.key(), player.getName())
                     .setPlaceholder(ADVANCEMENT.key(), display.displayName());
