@@ -32,7 +32,7 @@ public class AsyncChatListener implements Listener {
         }
     };
 
-    @EventHandler(priority = EventPriority.LOW)
+    @EventHandler(priority = EventPriority.HIGH)
     public void onAsyncChat(AsyncChatEvent event) {
         event.renderer(renderer);
     }
